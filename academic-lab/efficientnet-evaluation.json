@@ -1,0 +1,60 @@
+{
+  "method": "ImageNet-pretrained EfficientNet-B3 frozen embeddings and class-weighted SVM",
+  "images": 210,
+  "split": "Five subject-grouped outer folds with nested model selection",
+  "classification": {
+    "normal": {
+      "precision": 0.2727272727272727,
+      "recall": 0.3,
+      "f1-score": 0.2857142857142857,
+      "support": 30.0
+    },
+    "osteopenia": {
+      "precision": 0.6976744186046512,
+      "recall": 0.656934306569343,
+      "f1-score": 0.6766917293233082,
+      "support": 137.0
+    },
+    "osteoporosis": {
+      "precision": 0.3333333333333333,
+      "recall": 0.37209302325581395,
+      "f1-score": 0.3516483516483517,
+      "support": 43.0
+    },
+    "accuracy": 0.5476190476190477,
+    "macro avg": {
+      "precision": 0.43457834155508573,
+      "recall": 0.443009109941719,
+      "f1-score": 0.43801812222864855,
+      "support": 210.0
+    },
+    "weighted avg": {
+      "precision": 0.5623645088761368,
+      "recall": 0.5476190476190477,
+      "f1-score": 0.5542813076647662,
+      "support": 210.0
+    }
+  },
+  "labels": [
+    "normal",
+    "osteopenia",
+    "osteoporosis"
+  ],
+  "confusion_matrix": [
+    [
+      9,
+      16,
+      5
+    ],
+    [
+      20,
+      90,
+      27
+    ],
+    [
+      4,
+      23,
+      16
+    ]
+  ]
+}

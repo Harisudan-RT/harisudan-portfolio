@@ -106,7 +106,8 @@ async function benchmarks() {
   list.forEach(({ title }, index) => select.add(new Option(title, index)));
   if (select.dataset.index) select.selectedIndex = Number(select.dataset.index);
   function render() {
-    const { title, summary, report, reference, reference_label: referenceLabel } = list[select.selectedIndex];
+    const { title, summary, report, reference, reference_label: referenceLabel,
+      comparison, comparison_label: comparisonLabel } = list[select.selectedIndex];
     const data = reports[select.selectedIndex];
     const item = document.createElement("article");
     const heading = document.createElement("h3");
@@ -143,6 +144,12 @@ async function benchmarks() {
       const source = document.createElement("a");
       source.href = reference;
       source.textContent = referenceLabel;
+      links.append(source);
+    }
+    if (comparison) {
+      const source = document.createElement("a");
+      source.href = comparison;
+      source.textContent = comparisonLabel;
       links.append(source);
     }
     item.append(links);

@@ -1,0 +1,170 @@
+{
+  "documents": 21,
+  "chunks": 9788,
+  "questions": 18,
+  "top_three": 9,
+  "cases": [
+    {
+      "question": "Which HTTP methods are safe?",
+      "expected": "9110/9.2.1",
+      "found": [
+        "9110/9.2.1",
+        "9110/9.1",
+        "9110/18.2"
+      ]
+    },
+    {
+      "question": "What does idempotent mean for retrying a request?",
+      "expected": "9110/9.2.2",
+      "found": [
+        "9110/15.6.4",
+        "9110/9.2.2",
+        "9000/4.6"
+      ]
+    },
+    {
+      "question": "How do I fetch metadata without a response body?",
+      "expected": "9110/9.3.2",
+      "found": [
+        "9112/6",
+        "9113/8.4.2",
+        "8446/12.2"
+      ]
+    },
+    {
+      "question": "How can I prevent overwriting another client's changes?",
+      "expected": "9110/13.1.1",
+      "found": [
+        "9002/7.3.1",
+        "9110/13",
+        "9000/12"
+      ]
+    },
+    {
+      "question": "What status code says my cached representation is unchanged?",
+      "expected": "9110/15.4.5",
+      "found": [
+        "9111/5.2.1.7",
+        "9110/16.2.1",
+        "9110/16.2.2"
+      ]
+    },
+    {
+      "question": "Which status code challenges the client for credentials?",
+      "expected": "9110/15.5.2",
+      "found": [
+        "9112/4",
+        "9110/16.2.1",
+        "9110/15"
+      ]
+    },
+    {
+      "question": "What should a server send during temporary overload?",
+      "expected": "9110/15.6.4",
+      "found": [
+        "9110/15.6.4",
+        "9112/6.1",
+        "9110/7.6.2"
+      ]
+    },
+    {
+      "question": "When is a stored response fresh?",
+      "expected": "9111/4.2",
+      "found": [
+        "9111/4.3.4",
+        "9111/4",
+        "9111/4.3.5"
+      ]
+    },
+    {
+      "question": "Can shared caches store a private response?",
+      "expected": "9111/5.2.2.7",
+      "found": [
+        "9111/5.2.2.5",
+        "9111/5.2.1.5",
+        "9111/5.2.2.7"
+      ]
+    },
+    {
+      "question": "How does a zero chunk mark the end of a message?",
+      "expected": "9112/7.1",
+      "found": [
+        "9112/7.1.1",
+        "9112/7.1",
+        "9001/8.3"
+      ]
+    },
+    {
+      "question": "How can inconsistent parsing enable request smuggling?",
+      "expected": "9112/11.2",
+      "found": [
+        "9112/11.2",
+        "9110/9.3.1",
+        "9112/3"
+      ]
+    },
+    {
+      "question": "What if both Content-Length and Transfer-Encoding are present?",
+      "expected": "9112/6.3",
+      "found": [
+        "9112/6.1",
+        "9112/6.3",
+        "9110/9.3.6"
+      ]
+    },
+    {
+      "question": "Which request can replace an existing resource?",
+      "expected": "9110/9.3.4",
+      "found": [
+        "9110/9.3.3",
+        "9110/9.1",
+        "9110/9.3.8"
+      ]
+    },
+    {
+      "question": "Prevent a cache from keeping a copy",
+      "expected": "9111/5.2.2.4",
+      "found": [
+        "9113/4.3.1",
+        "9111/5.2.2.4",
+        "9113/6.8"
+      ]
+    },
+    {
+      "question": "How long after generation does a response become stale?",
+      "expected": "9111/5.2.2.1",
+      "found": [
+        "9110/8.8.3.3",
+        "6455/1.9",
+        "9111/5.2.2.2"
+      ]
+    },
+    {
+      "question": "Where do I find supported methods after a 405?",
+      "expected": "9110/15.5.6",
+      "found": [
+        "9110/15.5.6",
+        "9110/10.2.1",
+        "8446/4.1.2"
+      ]
+    },
+    {
+      "question": "What happens after an ETag match on a conditional GET?",
+      "expected": "9110/13.1.2",
+      "found": [
+        "9110/8.8.3.2",
+        "9204/3.2.6",
+        "9111/4.3.1"
+      ]
+    },
+    {
+      "question": "What comes after the final hexadecimal zero?",
+      "expected": "9112/7.1",
+      "found": [
+        "9110/8.8.3.2",
+        "6455/5.5.1",
+        "3986/5.2.4"
+      ]
+    }
+  ]
+}

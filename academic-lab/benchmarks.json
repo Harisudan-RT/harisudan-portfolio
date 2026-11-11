@@ -1,10 +1,12 @@
 [
   {
     "title": "Network intrusion detection",
-    "summary": "Attack F1 was 0.986 on 343,043 held-out Friday flows from corrected CICIDS2017. DDoS was detected consistently, while Bot and PortScan recall were low.",
+    "summary": "Attack F1 was 0.986 on 343,043 held-out Friday flows from corrected CICIDS2017. DDoS was detected consistently, while Bot and PortScan recall were low. On a separate 30,000-flow comparison, the plain Transformer achieved 0.951 attack F1, versus 0.937 with WGAN augmentation.",
     "report": "intrusion-evaluation.json",
     "reference": "https://github.com/Harisudan-RT/Cyber-threat-detection-with-WGAN-augmentation",
-    "reference_label": "Original WGAN and Transformer project"
+    "reference_label": "Original WGAN and Transformer project",
+    "comparison": "wgan-evaluation.json",
+    "comparison_label": "WGAN augmentation comparison"
   },
   {
     "title": "Multimodal deepfake detection",
@@ -13,9 +15,11 @@
   },
   {
     "title": "Knee X-ray bone density classification",
-    "summary": "Macro F1 was 0.334 on 210 images under subject-grouped cross-validation. Minority-class performance was low. Research benchmark only.",
+    "summary": "EfficientNet-B3 features with an SVM reached 0.438 macro F1 on 210 images, compared with 0.334 for the handcrafted SVM under subject-grouped cross-validation. Minority-class performance was low. Research benchmark only.",
     "report": "bone-evaluation.json",
     "reference": "https://github.com/Harisudan-RT/Bone-Density-Classification-with-EfficientNet-B3",
-    "reference_label": "Original EfficientNet-B3 project"
+    "reference_label": "Original EfficientNet-B3 project",
+    "comparison": "efficientnet-evaluation.json",
+    "comparison_label": "EfficientNet-B3 evaluation"
   }
 ]

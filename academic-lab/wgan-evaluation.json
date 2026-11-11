@@ -1,0 +1,87 @@
+{
+  "dataset": "Corrected CICIDS2017",
+  "train_rows": 12000,
+  "test_rows": 30000,
+  "synthetic_benign_train_rows": 3000,
+  "split": "Mon\u2013Thu training, Friday test; fixed deterministic subsamples after duplicate filtering",
+  "plain_transformer": {
+    "average_precision": 0.9851153365010146,
+    "classification": {
+      "benign": {
+        "precision": 0.9903731592241338,
+        "recall": 0.969217853644886,
+        "f1-score": 0.9796813124646426,
+        "support": 21441.0
+      },
+      "attack": {
+        "precision": 0.9268049240323832,
+        "recall": 0.9763991120457998,
+        "f1-score": 0.950955848884843,
+        "support": 8559.0
+      },
+      "accuracy": 0.9712666666666666,
+      "macro avg": {
+        "precision": 0.9585890416282585,
+        "recall": 0.9728084828453429,
+        "f1-score": 0.9653185806747429,
+        "support": 30000.0
+      },
+      "weighted avg": {
+        "precision": 0.9722371417239273,
+        "recall": 0.9712666666666666,
+        "f1-score": 0.9714859377053259,
+        "support": 30000.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        20781,
+        660
+      ],
+      [
+        202,
+        8357
+      ]
+    ]
+  },
+  "wgan_augmented_transformer": {
+    "average_precision": 0.9930339415955562,
+    "classification": {
+      "benign": {
+        "precision": 0.9902504947149959,
+        "recall": 0.9569049951028403,
+        "f1-score": 0.973292220113852,
+        "support": 21441.0
+      },
+      "attack": {
+        "precision": 0.9004417627410839,
+        "recall": 0.9763991120457998,
+        "f1-score": 0.9368834080717489,
+        "support": 8559.0
+      },
+      "accuracy": 0.9624666666666667,
+      "macro avg": {
+        "precision": 0.9453461287280399,
+        "recall": 0.96665205357432,
+        "f1-score": 0.9550878140928004,
+        "support": 30000.0
+      },
+      "weighted avg": {
+        "precision": 0.9646280634828388,
+        "recall": 0.9624666666666667,
+        "f1-score": 0.9629047860382399,
+        "support": 30000.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        20517,
+        924
+      ],
+      [
+        202,
+        8357
+      ]
+    ]
+  }
+}
