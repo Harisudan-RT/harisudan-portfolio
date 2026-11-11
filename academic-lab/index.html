@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Applied AI and Analytics Lab</title>
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./lab.mjs"></script>
+</head>
+<body>
+  <header><div class="wrap">
+    <nav aria-label="Projects"><a class="brand" href="#top">Applied AI Lab</a><a href="#retail">Retail analytics</a><a href="#search">Document retrieval</a><a href="#models">Model benchmarks</a></nav>
+  </div></header>
+  <main class="wrap">
+    <div class="intro" id="top">
+      <h1>Applied AI &amp;<br>Analytics Lab</h1>
+      <p>Explore retail transactions, search HTTP standards, and inspect how three machine learning models performed on held-out data.</p>
+      <a class="primary" href="#retail">Explore the data <span aria-hidden="true">↓</span></a>
+    </div>
+    <section id="retail" aria-labelledby="retail-title">
+      <h2 id="retail-title">Retail sales dashboard</h2>
+      <p>Explore historical invoice lines from a UK online retailer. Amounts are in GBP.</p>
+      <div class="controls">
+        <label>Market <select id="market"><option value="">All markets</option></select></label>
+        <label>Measure <select id="measure"><option value="5">Gross sales</option><option value="3">Invoices</option><option value="4">Units</option></select></label>
+      </div>
+      <p id="retail-status" class="method" role="status">Loading sales aggregates…</p>
+      <div class="kpis" id="retail-kpis"></div>
+      <table><caption>Monthly totals for the selected market and measure</caption><thead><tr><th scope="col">Month</th><th scope="col">Relative volume</th><th scope="col">Value</th></tr></thead><tbody id="sales"></tbody></table>
+      <p class="method">Gross sales include positive-quantity, positive-price invoice lines. Cancellations and returns are excluded. December 2011 is a partial month. <a href="https://archive.ics.uci.edu/dataset/352/online+retail">UCI Online Retail dataset</a>.</p>
+    </section>
+    <section id="search" aria-labelledby="search-title">
+      <h2 id="search-title">HTTP document retrieval</h2>
+      <p>Find source-linked notes on HTTP semantics, caching, and HTTP/1.1 framing.</p>
+      <form id="search-form"><label for="query">Question or keywords</label><div class="controls"><input id="query" required maxlength="220" value="When is a stored response fresh?"><button>Search</button></div></form>
+      <div class="examples" aria-label="Example searches"><button type="button" data-query="Which HTTP methods are safe?">Safe methods</button><button type="button" data-query="How does chunked transfer coding work?">Chunked transfers</button><button type="button" data-query="What status code says my cached representation is unchanged?">Cache validation</button></div>
+      <p id="search-status" role="status">Loading search index…</p>
+      <div id="results"></div>
+      <p class="method"><a href="./retrieval-evaluation.json">View the labeled retrieval benchmark</a>. Results use BM25 ranking over paraphrased notes with links to the original RFC sections.</p>
+    </section>
+    <section id="models" aria-labelledby="models-title">
+      <h2 id="models-title">Model benchmarks</h2>
+      <p>Inspect evaluation metrics, class-level results, and the limits of each experiment.</p>
+      <div class="controls"><label>Experiment <select id="benchmark-select"></select></label></div>
+      <div id="benchmarks" aria-live="polite"><p>Loading benchmark reports…</p></div>
+    </section>
+  </main>
+</body>
+</html>

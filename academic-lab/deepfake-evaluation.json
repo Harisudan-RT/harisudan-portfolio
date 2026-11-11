@@ -1,0 +1,19 @@
+{
+  "dataset": "Celeb-DF-v2 identity-held-out subset",
+  "train_clips": 20,
+  "test_clips": 20,
+  "train_clips_with_audio": 0,
+  "test_clips_with_audio": 0,
+  "visual": {
+    "test_clips": 20,
+    "roc_auc": 0.5800000000000001,
+    "average_precision": 0.5577343489843489,
+    "balanced_accuracy": 0.44999999999999996
+  },
+  "visual_on_audio_subset": {
+    "status": "Insufficient audio-bearing clips for both labels"
+  },
+  "audio_visual": {
+    "status": "Insufficient audio-bearing clips for both labels"
+  }
+}

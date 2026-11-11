@@ -1,0 +1,152 @@
+{
+  "dataset": "Wani and Arora, Knee X-ray Osteoporosis Database v2",
+  "images": 210,
+  "subjects": 210,
+  "duplicate_images_removed": 14,
+  "conflicting_label_images_removed": 15,
+  "method": "Five-fold subject-grouped cross-validation with inner-fold selection of a class-weighted SVM on image gradients",
+  "selected_parameters_by_fold": [
+    {
+      "svc__C": 1,
+      "svc__kernel": "linear"
+    },
+    {
+      "svc__C": 1,
+      "svc__kernel": "linear"
+    },
+    {
+      "svc__C": 1,
+      "svc__kernel": "linear"
+    },
+    {
+      "svc__C": 1,
+      "svc__kernel": "rbf"
+    },
+    {
+      "svc__C": 1,
+      "svc__kernel": "linear"
+    }
+  ],
+  "labels": [
+    "normal",
+    "osteopenia",
+    "osteoporosis"
+  ],
+  "confusion_matrix": [
+    [
+      5,
+      16,
+      9
+    ],
+    [
+      29,
+      77,
+      31
+    ],
+    [
+      10,
+      21,
+      12
+    ]
+  ],
+  "classification": {
+    "normal": {
+      "precision": 0.11363636363636363,
+      "recall": 0.16666666666666666,
+      "f1-score": 0.13513513513513514,
+      "support": 30.0
+    },
+    "osteopenia": {
+      "precision": 0.6754385964912281,
+      "recall": 0.5620437956204379,
+      "f1-score": 0.6135458167330677,
+      "support": 137.0
+    },
+    "osteoporosis": {
+      "precision": 0.23076923076923078,
+      "recall": 0.27906976744186046,
+      "f1-score": 0.25263157894736843,
+      "support": 43.0
+    },
+    "accuracy": 0.44761904761904764,
+    "macro avg": {
+      "precision": 0.3399480636322742,
+      "recall": 0.3359267432429884,
+      "f1-score": 0.3337708436051905,
+      "support": 210.0
+    },
+    "weighted avg": {
+      "precision": 0.5041297883403146,
+      "recall": 0.44761904761904764,
+      "f1-score": 0.47129994686295795,
+      "support": 210.0
+    }
+  },
+  "extra_trees_comparison": {
+    "normal": {
+      "precision": 0.2,
+      "recall": 0.03333333333333333,
+      "f1-score": 0.05714285714285714,
+      "support": 30.0
+    },
+    "osteopenia": {
+      "precision": 0.6526315789473685,
+      "recall": 0.9051094890510949,
+      "f1-score": 0.7584097859327217,
+      "support": 137.0
+    },
+    "osteoporosis": {
+      "precision": 0.13333333333333333,
+      "recall": 0.046511627906976744,
+      "f1-score": 0.06896551724137931,
+      "support": 43.0
+    },
+    "accuracy": 0.6047619047619047,
+    "macro avg": {
+      "precision": 0.3286549707602339,
+      "recall": 0.328318150097135,
+      "f1-score": 0.2948393867723194,
+      "support": 210.0
+    },
+    "weighted avg": {
+      "precision": 0.48163742690058486,
+      "recall": 0.6047619047619047,
+      "f1-score": 0.5170568744211804,
+      "support": 210.0
+    }
+  },
+  "majority_comparison": {
+    "normal": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 30.0
+    },
+    "osteopenia": {
+      "precision": 0.6523809523809524,
+      "recall": 1.0,
+      "f1-score": 0.7896253602305475,
+      "support": 137.0
+    },
+    "osteoporosis": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 43.0
+    },
+    "accuracy": 0.6523809523809524,
+    "macro avg": {
+      "precision": 0.21746031746031746,
+      "recall": 0.3333333333333333,
+      "f1-score": 0.2632084534101825,
+      "support": 210.0
+    },
+    "weighted avg": {
+      "precision": 0.42560090702947845,
+      "recall": 0.6523809523809524,
+      "f1-score": 0.5151365445313573,
+      "support": 210.0
+    }
+  },
+  "limitations": "One small research dataset. No external or clinical validation. No metadata used."
+}

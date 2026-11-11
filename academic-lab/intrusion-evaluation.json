@@ -1,0 +1,75 @@
+{
+  "dataset": "Engelen et al. corrected CICIDS2017, WTMC 2021",
+  "train_days": [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday"
+  ],
+  "test_day": "Friday",
+  "train_rows": 1357155,
+  "test_rows": 343043,
+  "features": [
+    "Flow Duration",
+    "Total Fwd Packet",
+    "Total Bwd packets",
+    "Total Length of Fwd Packet",
+    "Total Length of Bwd Packet",
+    "Fwd Packet Length Max",
+    "Fwd Packet Length Mean",
+    "Bwd Packet Length Max",
+    "Bwd Packet Length Mean",
+    "Flow IAT Mean",
+    "Flow IAT Std",
+    "FIN Flag Count",
+    "SYN Flag Count",
+    "RST Flag Count",
+    "ACK Flag Count",
+    "Down/Up Ratio"
+  ],
+  "model": "Histogram gradient boosting",
+  "confusion_matrix_normal_then_attack": [
+    [
+      245100,
+      755
+    ],
+    [
+      2026,
+      95162
+    ]
+  ],
+  "average_precision": 0.9972325630408431,
+  "classification": {
+    "benign": {
+      "precision": 0.9918017529519354,
+      "recall": 0.9969290842163063,
+      "f1-score": 0.994358808960183,
+      "support": 245855.0
+    },
+    "attack": {
+      "precision": 0.9921286111950958,
+      "recall": 0.9791538049965016,
+      "f1-score": 0.9855985085834131,
+      "support": 97188.0
+    },
+    "accuracy": 0.9918931445912028,
+    "macro avg": {
+      "precision": 0.9919651820735156,
+      "recall": 0.988041444606404,
+      "f1-score": 0.989978658771798,
+      "support": 343043.0
+    },
+    "weighted avg": {
+      "precision": 0.9918943556254669,
+      "recall": 0.9918931445912028,
+      "f1-score": 0.9918769158067955,
+      "support": 343043.0
+    }
+  },
+  "attack_label_recall": {
+    "Bot": 0.0,
+    "Bot - Attempted": 0.8775510204081632,
+    "DDoS": 0.9990118057672698,
+    "PortScan": 0.07042253521126761
+  }
+}

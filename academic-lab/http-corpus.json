@@ -1,0 +1,21 @@
+[
+["9110","9.2.1","Safe methods","GET, HEAD, OPTIONS and TRACE are defined as safe methods. The client does not request a change in server state when it uses a safe method."],
+["9110","9.2.2","Idempotent methods","An idempotent method has the same intended effect when repeated as when executed once. PUT, DELETE and safe methods are idempotent. A client can sometimes retry after a dropped connection."],
+["9110","9.3.2","HEAD requests","HEAD has the same semantics as GET except the server sends no response content. It can retrieve representation metadata without transferring the body."],
+["9110","9.3.4","PUT requests","PUT asks the server to create or replace the state of the target resource with the supplied representation. A newly created resource normally receives 201."],
+["9110","13.1.1","If-Match","If-Match uses strong entity tag comparison. It can protect updates against overwriting changes made by another client, and a failed precondition normally produces status 412."],
+["9110","13.1.2","If-None-Match","If-None-Match is false when a listed entity tag matches the selected representation. A false condition on GET or HEAD can produce 304, while other methods normally receive 412."],
+["9110","15.4.5","304 Not Modified","Status code 304 tells the client that its cached representation is still valid after a conditional GET or HEAD. The representation is unmodified, so the response has no body."],
+["9110","15.5.2","401 Unauthorized","A 401 response indicates that the request lacks valid authentication credentials. The server sends a WWW-Authenticate challenge."],
+["9110","15.5.6","405 Method Not Allowed","405 means the server knows the method but the target resource does not support it. The response includes an Allow field with supported methods."],
+["9110","15.6.4","503 Service Unavailable","A server can use 503 for temporary overload or scheduled maintenance and may supply Retry-After to indicate how long to wait."],
+["9111","4.2","Freshness","A stored response is fresh while its age is below its freshness lifetime. A fresh response can generally be reused without first checking with the origin."],
+["9111","4.3","Cache validation","A cache can send a conditional request to validate a stored response. Validators such as an entity tag or modification date help the origin determine whether a cached representation can be reused."],
+["9111","5.2.2.1","Cache-Control max-age","The response max-age directive gives the number of seconds after generation when the response becomes stale."],
+["9111","5.2.2.4","Cache-Control no-store","The no-store response directive tells caches to avoid storing the request or response and to make a best effort to remove volatile copies promptly."],
+["9111","5.2.2.7","Cache-Control private","A response marked private can be stored by a private cache under the usual constraints. A shared cache must not store the full response when the directive is unqualified."],
+["9112","6.3","HTTP/1.1 message body length","Message framing determines how much content to read. A message with both Transfer-Encoding and Content-Length can indicate request smuggling or response splitting and needs special handling."],
+["9112","7.1","Chunked transfer coding","Chunked transfer coding sends content as chunks prefixed with their size in hexadecimal. A final zero-size chunk ends the sequence, followed by any trailers."],
+["9112","11.2","HTTP request smuggling","Request smuggling exploits disagreements about message boundaries between recipients such as a proxy and an origin server. Strict parsing and consistent framing reduce the risk."]
+]
+

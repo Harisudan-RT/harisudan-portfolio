@@ -1,0 +1,21 @@
+[
+  {
+    "title": "Network intrusion detection",
+    "summary": "Attack F1 was 0.986 on 343,043 held-out Friday flows from corrected CICIDS2017. DDoS was detected consistently, while Bot and PortScan recall were low.",
+    "report": "intrusion-evaluation.json",
+    "reference": "https://github.com/Harisudan-RT/Cyber-threat-detection-with-WGAN-augmentation",
+    "reference_label": "Original WGAN and Transformer project"
+  },
+  {
+    "title": "Multimodal deepfake detection",
+    "summary": "Visual AUROC was 0.580 on 20 held-out clips from a small identity-separated Celeb-DF-v2 subset. The audio-visual variant had too few labeled clips with audio for evaluation.",
+    "report": "deepfake-evaluation.json"
+  },
+  {
+    "title": "Knee X-ray bone density classification",
+    "summary": "Macro F1 was 0.334 on 210 images under subject-grouped cross-validation. Minority-class performance was low. Research benchmark only.",
+    "report": "bone-evaluation.json",
+    "reference": "https://github.com/Harisudan-RT/Bone-Density-Classification-with-EfficientNet-B3",
+    "reference_label": "Original EfficientNet-B3 project"
+  }
+]

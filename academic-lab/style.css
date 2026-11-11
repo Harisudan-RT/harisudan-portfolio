@@ -1,0 +1,41 @@
+:root { color-scheme: dark; font: 16px/1.6 Inter, system-ui, sans-serif; background: #10171e; color: #f0f5f8; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+.wrap { width: min(92%, 64rem); margin-inline: auto; }
+header { padding: 1rem 0; border-bottom: 1px solid #33414c; background: #141e27; }
+.brand { margin-right: auto; font-weight: 750; color: #f0f5f8; }
+.intro { padding: clamp(2.5rem, 8vw, 6.5rem) 0 clamp(1rem, 4vw, 3rem); }
+.intro p { max-width: 36rem; font-size: clamp(1rem, 2vw, 1.22rem); color: #c0d0d8; }
+h1 { font-size: clamp(2.7rem, 8vw, 6rem); letter-spacing: -.055em; line-height: .98; margin: 0 0 1.2rem; }
+h2 { margin: 0; line-height: 1.2; font-size: clamp(1.65rem, 4vw, 2.5rem); letter-spacing: -.035em; }
+nav, .controls { display: flex; flex-wrap: wrap; gap: .75rem 1.3rem; align-items: center; }
+a { color: #a7f1c6; text-underline-offset: .2em; }
+section { margin: 2rem 0; padding: clamp(1rem, 4vw, 3rem); background: #16232c; border: 1px solid #374854; border-radius: 1rem; }
+label { font-weight: 600; }
+input, select, button { font: inherit; border: 1px solid #718995; border-radius: .45rem; padding: .45rem .65rem; background: #101820; color: inherit; max-width: 100%; }
+input { flex: 1 1 14rem; min-width: 0; }
+button { background: #a7f1c6; color: #101820; font-weight: 700; cursor: pointer; }
+.primary { display: inline-flex; gap: .8rem; background: #a7f1c6; color: #101820; padding: .6rem .95rem; border-radius: .5rem; text-decoration: none; font-weight: 750; }
+.examples { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .6rem; }
+.examples button { color: #d7e7ec; background: transparent; font-size: .9rem; }
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(10rem, 100%), 1fr)); gap: .75rem; margin: 1rem 0 1.5rem; }
+.kpi { background: #101820; border: 1px solid #374854; border-radius: .55rem; padding: .65rem .85rem; }
+.kpi span, .kpi strong { display: block; }
+.kpi span { font-size: .85rem; color: #c0d0d8; }
+.kpi strong { font-size: clamp(1.15rem, 3vw, 1.6rem); font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+caption, th { text-align: left; }
+th, td { padding: .4rem; border-bottom: 1px solid #374854; }
+#sales td:nth-child(2) { width: 55%; }
+meter { display: block; width: 100%; accent-color: #a7f1c6; }
+.method { color: #c0d0d8; }
+#results article, #benchmarks article { border-top: 1px solid #374854; margin-top: 1rem; }
+#benchmarks table { table-layout: fixed; margin-bottom: 1rem; }
+#benchmarks th { overflow-wrap: anywhere; }
+:focus-visible { outline: 3px solid #f8d882; outline-offset: 3px; }
+@media (max-width: 600px) {
+  .brand { width: 100%; }
+  nav { gap: .4rem .85rem; font-size: .9rem; }
+  #sales td:nth-child(2) { width: 33%; }
+  #benchmarks th, #benchmarks td { padding-inline: .2rem; font-size: .82rem; }
+}
