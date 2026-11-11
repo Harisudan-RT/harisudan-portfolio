@@ -8,7 +8,7 @@
   function syncMotion() {
     document.body.classList.toggle("motion-paused", paused);
     motionButton.setAttribute("aria-pressed", String(paused));
-    motionButton.innerHTML = paused ? '<span aria-hidden="true">▷</span> Resume motion' : '<span aria-hidden="true">Ⅱ</span> Pause motion';
+    motionButton.innerHTML = paused ? '<span aria-hidden="true"><i class="ui-icon icon-play"></i></span> Resume motion' : '<span aria-hidden="true"><i class="ui-icon icon-pause"></i></span> Pause motion';
   }
   syncMotion();
   motionButton.addEventListener("click", () => { paused = !paused; syncMotion(); });
@@ -109,7 +109,7 @@
   $$("[data-project]").forEach(button => button.addEventListener("click", () => {
     const p = projectData[button.dataset.project]; if (!p) return;
     returnFocus = button;
-    $(".dialog-body", dialog).innerHTML = `<span class="eyebrow">${p.category}</span><h2 id="dialog-title">${p.title}</h2><p class="dialog-intro">${p.intro}</p>${p.metrics.length ? `<div class="dialog-metrics">${p.metrics.map(m => `<div><strong>${m[0]}</strong><span>${m[1]}</span></div>`).join("")}</div>` : ""}<h3>The challenge</h3><p>${p.challenge}</p><h3>The approach</h3><ul>${p.approach.map(a => `<li>${a}</li>`).join("")}</ul><h3>The result</h3><p>${p.outcome}</p><div class="tags">${p.tags.map(t => `<span>${t}</span>`).join("")}</div><p class="dialog-note">${p.note}</p><a class="text-link" href="mailto:harisudan.rajendran2003@gmail.com">Ask me about this work <span aria-hidden="true">↗</span></a>`;
+    $(".dialog-body", dialog).innerHTML = `<span class="eyebrow">${p.category}</span><h2 id="dialog-title">${p.title}</h2><p class="dialog-intro">${p.intro}</p>${p.metrics.length ? `<div class="dialog-metrics">${p.metrics.map(m => `<div><strong>${m[0]}</strong><span>${m[1]}</span></div>`).join("")}</div>` : ""}<h3>The challenge</h3><p>${p.challenge}</p><h3>The approach</h3><ul>${p.approach.map(a => `<li>${a}</li>`).join("")}</ul><h3>The result</h3><p>${p.outcome}</p><div class="tags">${p.tags.map(t => `<span>${t}</span>`).join("")}</div><p class="dialog-note">${p.note}</p><a class="text-link" href="mailto:harisudan.rajendran2003@gmail.com">Ask me about this work <span aria-hidden="true"><i class="ui-icon icon-external" aria-hidden="true"></i></span></a>`;
     dialog.showModal(); dialog.scrollTop = 0;
   }));
   $(".dialog-close").addEventListener("click", () => dialog.close());
@@ -121,26 +121,4 @@
     catch { status.textContent = "harisudan.rajendran2003@gmail.com"; }
     window.setTimeout(() => { status.textContent = ""; }, 6000);
   });
-  const canvas = $("#network"), ctx = canvas.getContext("2d");
-  if (ctx) {
-    let w = 0, h = 0, visible = true, frame = 0;
-    function resize() { const r = canvas.getBoundingClientRect(); w = r.width; h = r.height; const dpr = Math.min(devicePixelRatio || 1, 2); canvas.width = w * dpr; canvas.height = h * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0); frame = 0; }
-    new ResizeObserver(resize).observe(canvas); resize();
-    if ("IntersectionObserver" in window) new IntersectionObserver(entries => { visible = entries[0].isIntersecting; }).observe(canvas);
-    function draw(time) {
-      requestAnimationFrame(draw);
-      if (!visible || document.hidden || (paused && frame > 0)) return;
-      frame++;
-      ctx.clearRect(0, 0, w, h);
-      const t = paused ? 0 : time * .00012, radius = Math.min(w, h) * .36;
-      const points = Array.from({ length: 16 }, (_, i) => { const angle = i * Math.PI * 2 / 16 + t * (i % 2 ? 1 : -.65); const r = radius * (.77 + (i % 3) * .15); return { x: w / 2 + Math.cos(angle) * r * 1.1, y: h / 2 + Math.sin(angle) * r }; });
-      points.forEach((p, i) => {
-        [1, 4, 7].forEach(offset => { const q = points[(i + offset) % points.length]; ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(q.x, q.y); ctx.strokeStyle = `rgba(181,239,118,${offset === 1 ? .34 : .11})`; ctx.lineWidth = .8; ctx.stroke(); });
-        ctx.beginPath(); ctx.arc(p.x, p.y, i % 4 === 0 ? 4.2 : 2.2, 0, Math.PI * 2); ctx.fillStyle = i % 4 === 0 ? "#b5ef76" : "#6d9a68"; ctx.fill();
-        if (i % 4 === 0) { ctx.beginPath(); ctx.arc(p.x, p.y, 9, 0, Math.PI * 2); ctx.strokeStyle = "#b5ef7645"; ctx.stroke(); }
-      });
-    }
-    requestAnimationFrame(draw);
-  }
 })();
-
