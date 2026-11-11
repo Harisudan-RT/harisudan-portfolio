@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<base href="../"><title>HTTP Document Search</title><link rel="stylesheet" href="./style.css">
+<script type="module" src="./lab.mjs"></script></head>
+<body><header><nav class="wrap" aria-label="Project navigation"><a class="brand" href="./">Applied AI Lab</a></nav></header>
+<main class="wrap"><div class="intro"><h1>HTTP Document Search</h1></div><section id="search" aria-labelledby="search-title">
+      <h2 id="search-title">HTTP document retrieval</h2>
+      <p>Find source-linked notes on HTTP semantics, caching, and HTTP/1.1 framing.</p>
+      <form id="search-form"><label for="query">Question or keywords</label><div class="controls"><input id="query" required maxlength="220" value="When is a stored response fresh?"><button>Search</button></div></form>
+      <div class="examples" aria-label="Example searches"><button type="button" data-query="Which HTTP methods are safe?">Safe methods</button><button type="button" data-query="How does chunked transfer coding work?">Chunked transfers</button><button type="button" data-query="What status code says my cached representation is unchanged?">Cache validation</button></div>
+      <p id="search-status" role="status">Loading search index…</p>
+      <div id="results"></div>
+      <p class="method"><a href="./retrieval-evaluation.json">View the labeled retrieval benchmark</a>. Results use BM25 ranking over paraphrased notes with links to the original RFC sections.</p>
+    </section></main></body></html>

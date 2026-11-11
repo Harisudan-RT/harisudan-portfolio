@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<base href="../"><title>Retail Sales Analytics</title><link rel="stylesheet" href="./style.css">
+<script type="module" src="./lab.mjs"></script></head>
+<body><header><nav class="wrap" aria-label="Project navigation"><a class="brand" href="./">Applied AI Lab</a></nav></header>
+<main class="wrap"><div class="intro"><h1>Retail Sales Analytics</h1></div><section id="retail" aria-labelledby="retail-title">
+      <h2 id="retail-title">Retail sales dashboard</h2>
+      <p>Explore historical invoice lines from a UK online retailer. Amounts are in GBP.</p>
+      <div class="controls">
+        <label>Market <select id="market"><option value="">All markets</option></select></label>
+        <label>Measure <select id="measure"><option value="5">Gross sales</option><option value="3">Invoices</option><option value="4">Units</option></select></label>
+      </div>
+      <p id="retail-status" class="method" role="status">Loading sales aggregates…</p>
+      <div class="kpis" id="retail-kpis"></div>
+      <table><caption>Monthly totals for the selected market and measure</caption><thead><tr><th scope="col">Month</th><th scope="col">Relative volume</th><th scope="col">Value</th></tr></thead><tbody id="sales"></tbody></table>
+      <p class="method">Gross sales include positive-quantity, positive-price invoice lines. Cancellations and returns are excluded. December 2011 is a partial month. <a href="https://archive.ics.uci.edu/dataset/352/online+retail">UCI Online Retail dataset</a>.</p>
+    </section></main></body></html>

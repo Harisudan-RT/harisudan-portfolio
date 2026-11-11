@@ -104,6 +104,7 @@ async function benchmarks() {
   const reports = await Promise.all(list.map(({ report }) => getJson(report)));
   const select = byId("benchmark-select");
   list.forEach(({ title }, index) => select.add(new Option(title, index)));
+  if (select.dataset.index) select.selectedIndex = Number(select.dataset.index);
   function render() {
     const { title, summary, report, reference, reference_label: referenceLabel } = list[select.selectedIndex];
     const data = reports[select.selectedIndex];
@@ -131,6 +132,7 @@ async function benchmarks() {
     }
     item.append(heading, description, metrics);
     if (matrix) item.append(confusionTable(matrix, labels));
+    if (data.held_out_thresholds) item.append(thresholdExplorer(data.held_out_thresholds));
     const link = document.createElement("a");
     link.href = report;
     link.textContent = "Open evaluation report";
@@ -148,6 +150,31 @@ async function benchmarks() {
   }
   select.addEventListener("change", render);
   render();
+}
+
+function thresholdExplorer(thresholds) {
+  const container = document.createElement("div");
+  const label = document.createElement("label");
+  const slider = document.createElement("input");
+  slider.type = "range";
+  slider.min = 0;
+  slider.max = thresholds.length - 1;
+  slider.value = thresholds.findIndex(row => row.threshold === .5);
+  const output = document.createElement("output");
+  output.style.display = "block";
+  const hint = document.createElement("p");
+  hint.className = "method";
+  hint.textContent = "Explore the trade-off on Friday's held-out flows. Choose a production threshold using separate validation data.";
+  label.append(" Score threshold ", slider);
+  function render() {
+    const { threshold, fp, fn, tp } = thresholds[Number(slider.value)];
+    const f1 = 2 * tp / Math.max(1, 2 * tp + fp + fn);
+    output.textContent = `${threshold.toFixed(2)} · ${number.format(fp)} false alarms · ${number.format(fn)} missed attacks · attack F1 ${decimal.format(f1)}`;
+  }
+  slider.addEventListener("input", render);
+  render();
+  container.append(label, output, hint);
+  return container;
 }
 
 function confusionTable(matrix, labels) {
@@ -171,5 +198,5 @@ function confusionTable(matrix, labels) {
 }
 
 for (const [init, status] of [[retail, "retail-status"], [retrieval, "search-status"], [benchmarks, "benchmarks"]]) {
-  init().catch(() => { byId(status).textContent = "Data could not be loaded. Serve this folder over HTTP and reload."; });
+  if (byId(status)) init().catch(() => { byId(status).textContent = "Data could not be loaded. Serve this folder over HTTP and reload."; });
 }

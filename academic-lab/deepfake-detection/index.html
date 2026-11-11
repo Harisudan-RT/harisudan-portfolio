@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<base href="../"><title>Audio and Visual Deepfake Research</title><link rel="stylesheet" href="./style.css">
+<script type="module" src="./lab.mjs"></script><script type="module" src="./lip-demo.mjs"></script></head>
+<body><header><nav class="wrap" aria-label="Project navigation"><a class="brand" href="./">Applied AI Lab</a></nav></header>
+<main class="wrap"><div class="intro"><h1>Audio and Visual Deepfake Research</h1></div><section aria-labelledby="lip-title">
+  <h2 id="lip-title">Inspect lip and audio timing</h2>
+  <p>Compare tracked lip opening with the audio energy in a short clip. Your files are processed in this browser.</p>
+  <div class="controls">
+    <label>Video <input id="lip-video" type="file" accept="video/*"></label>
+    <label>Audio file (optional) <input id="lip-audio" type="file" accept="audio/*"></label>
+  </div>
+  <div class="examples">
+    <button id="lip-run" type="button">Analyze clip</button>
+    <button id="lip-example" type="button">Try a known 300 ms delay</button>
+  </div>
+  <p id="lip-status" role="status">Select a clip or try the timing example.</p>
+  <div id="lip-result" class="kpis"></div>
+  <p class="method">A positive offset means audio follows lip motion. This timing probe uses facial landmarks and audio energy. Dubbing, noise, and tracking errors can affect the result.</p>
+</section>
+<section id="models" aria-labelledby="models-title">
+      <h2 id="models-title">Model benchmarks</h2>
+      <p>Inspect evaluation metrics, class-level results, and the limits of each experiment.</p>
+      <div hidden><select id="benchmark-select" data-index="1"></select></div>
+      <div id="benchmarks" aria-live="polite"><p>Loading benchmark reports…</p></div>
+    </section></main></body></html>
